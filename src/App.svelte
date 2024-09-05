@@ -71,20 +71,22 @@
     import TagCloud from "./lib/library/TagCloud.svelte";
     import { cubicInOut } from "svelte/easing";
     import SmartQueryBuilder from "./lib/smart-query/SmartQueryBuilder.svelte";
+    import BackgroundCanvas from "./BackgroundCanvas.svelte";
     const appWindow = getCurrentWebviewWindow();
 
     console.log("locale", getLocaleFromNavigator());
 
+    register("zh", () => import("./i18n/zh"));
     register("en", () => import("./i18n/en"));
     register("es", () => import("./i18n/es"));
 
     init({
-        fallbackLocale: "en",
+        fallbackLocale: "zh",
         initialLocale: getLocaleFromNavigator()
     });
 
-    loadLocale("en");
-    setLocale("en");
+    loadLocale("zh");
+    setLocale("zh");
 
     startMenuListener();
     startImportListener();
@@ -316,7 +318,8 @@
         class:mini-player={$isMiniPlayer}
         class:transparent={$os === "macos"}
         bind:this={container}
-    >
+    >   
+    <BackgroundCanvas/>
         <div class="window-padding">
             <!-- {#if !$isSidebarOpen}
                 <div data-tauri-drag-region></div>
@@ -328,7 +331,7 @@
                 <Sidebar />
             {/if}
         </div>
-
+       
         {#if !$isSidebarOpen}
             <div class="sidebar-toggle" style="top: {$sidebarTogglePos.y}px">
                 <Icon

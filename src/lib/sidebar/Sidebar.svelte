@@ -49,7 +49,8 @@
         singleKeyShortcutsEnabled,
         smartQueryInitiator,
         uiView,
-        userSettings
+        userSettings,
+        imageStore,
     } from "../../data/store";
     import LL from "../../i18n/i18n-svelte";
     import { currentThemeObject } from "../../theming/store";
@@ -156,6 +157,7 @@
                 artworkSrc = null;
             }
         }
+        imageStore.set(artworkSrc);
         drawArtwork(previousSongIdx > $currentSongIdx);
         previousSongIdx = $currentSongIdx;
     });

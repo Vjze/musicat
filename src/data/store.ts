@@ -73,6 +73,7 @@ lastPlayedInfo.subscribe((val) =>
     localStorage.setItem("lastPlayedInfo", JSON.stringify(val))
 );
 
+export const imageStore = writable(null);
 export const nextUpSong: Writable<Song> = writable(null);
 export const queriedSongs: Writable<Song[]> = writable([]);
 
