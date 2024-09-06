@@ -592,7 +592,7 @@ fn decode_loop(
                                 .is_some();
                         })
                         .is_some();
-                } else if (supported_output_configs.is_err()) {
+                } else if supported_output_configs.is_err() {
                     error!(
                         "failed to get audio output device config: {}",
                         supported_output_configs.err().unwrap()

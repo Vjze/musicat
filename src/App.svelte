@@ -27,7 +27,7 @@
         selectedSmartQuery,
         sidebarManuallyOpened,
         sidebarTogglePos,
-        uiView
+        uiView,
     } from "./data/store";
 
     import { type UnlistenFn } from "@tauri-apps/api/event";
@@ -82,7 +82,7 @@
 
     init({
         fallbackLocale: "zh",
-        initialLocale: getLocaleFromNavigator()
+        initialLocale: getLocaleFromNavigator(),
     });
 
     loadLocale("zh");
@@ -279,7 +279,7 @@
 
         $sidebarTogglePos = {
             x: 0,
-            y: window.innerHeight / 2 - 30
+            y: window.innerHeight / 2 - 30,
         };
     }
 </script>
@@ -289,7 +289,7 @@
 <ThemeWrapper>
     <!-- <svelte:body on:click={onPageClick} /> -->
     <Toaster />
-
+    <BackgroundCanvas />
     <CursorInfo show={showCursorInfo} x={mouseX} y={mouseY} />
 
     {#if $isSettingsOpen}
@@ -318,8 +318,7 @@
         class:mini-player={$isMiniPlayer}
         class:transparent={$os === "macos"}
         bind:this={container}
-    >   
-    <BackgroundCanvas/>
+    >
         <div class="window-padding">
             <!-- {#if !$isSidebarOpen}
                 <div data-tauri-drag-region></div>
@@ -331,7 +330,7 @@
                 <Sidebar />
             {/if}
         </div>
-       
+
         {#if !$isSidebarOpen}
             <div class="sidebar-toggle" style="top: {$sidebarTogglePos.y}px">
                 <Icon
@@ -352,6 +351,7 @@
                     transition:fly={{ duration: 200, x: -200 }}
                 >
                     <!-- <QueueView /> -->
+                    
                     <QueueView />
                     <QueueOptions />
                 </div>
@@ -383,7 +383,7 @@
                     transition:fly={{
                         y: -10,
                         duration: 200,
-                        easing: cubicInOut
+                        easing: cubicInOut,
                     }}
                 >
                     <TagCloud />
@@ -395,7 +395,7 @@
                         transition:fly={{
                             y: -10,
                             duration: 200,
-                            easing: cubicInOut
+                            easing: cubicInOut,
                         }}
                     >
                         <SmartQueryBuilder />

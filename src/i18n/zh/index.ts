@@ -13,7 +13,7 @@ const zh = {
         favorites: "喜欢",
         playlists: "播放列表",
         smartPlaylists: "猜你喜欢",
-        artistsToolkit: "艺术家列表",
+        artistsToolkit: "艺术家工具",
         map: "地图",
         internetArchive: "互联网档案",
         stats: "统计",
@@ -27,7 +27,7 @@ const zh = {
             track: "音轨",
             year: "发行日期",
             dateAdded: "添加日期",
-            genre: "性",
+            genre: "风格",
             origin: "国家",
             duration: "时长",
             tags: "标签"
@@ -121,7 +121,7 @@ const zh = {
         sampleRate: "采样率",
         bitRate: "码率",
         enrichmentCenter: "活动中心",
-        countryOfOrigin: "原产国",
+        countryOfOrigin: "国籍",
         countryOfOriginTooltip:
             "将此选项设置为使用地图视图，并在智能播放列表中按国家/地区进行过滤",
         fetchingOriginCountry: "读取中...",
