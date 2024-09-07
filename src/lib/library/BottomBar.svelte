@@ -87,6 +87,7 @@
             <p>{$LL.bottomBar.queue()}</p>
         </div>
         {#if !$isIAPlaying}
+            <!-- svelte-ignore a11y-click-events-have-key-events -->
             <div
                 class="toggle-button lyrics"
                 class:selected={$isLyricsOpen}

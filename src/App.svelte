@@ -289,7 +289,7 @@
 <ThemeWrapper>
     <!-- <svelte:body on:click={onPageClick} /> -->
     <Toaster />
-    <BackgroundCanvas />
+    
     <CursorInfo show={showCursorInfo} x={mouseX} y={mouseY} />
 
     {#if $isSettingsOpen}
@@ -319,6 +319,7 @@
         class:transparent={$os === "macos"}
         bind:this={container}
     >
+    <BackgroundCanvas />
         <div class="window-padding">
             <!-- {#if !$isSidebarOpen}
                 <div data-tauri-drag-region></div>

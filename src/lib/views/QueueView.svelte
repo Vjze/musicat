@@ -1058,7 +1058,6 @@
             <p>💿 one sec...</p>
         </div>
     {:else}
-        <BackgroundCanvas />
         <!-- svelte-ignore a11y-no-static-element-interactions -->
         <div
             id="scroll-container"
